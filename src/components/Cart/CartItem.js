@@ -10,7 +10,6 @@ export default function CartItem({item, value}) {
     while(totalString.length > 3){
         totalFinal = "." + totalString.substr(totalString.length - 3, totalString.length - 1) + totalFinal;
         totalString = totalString.substr(0, totalString.length - 3);
-        console.log(totalFinal);
     }
     totalFinal = totalString + totalFinal;
     
