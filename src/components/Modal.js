@@ -26,12 +26,12 @@ export default class Modal extends Component {
                                             <h5 className="text-muted">Price: {price}đ</h5>
                                             <Link to="/">
                                                 <ButtonContainer onClick = {() => closeModal()}>
-                                                    Continue Shopping
+                                                    Tiếp tục mua sắm
                                                 </ButtonContainer>
                                             </Link>
                                             <Link to="/cart">
                                                 <ButtonContainer cart onClick = {() => closeModal()}>
-                                                    Go to Cart
+                                                    Đến giỏ hàng
                                                 </ButtonContainer>
                                             </Link>
                                         </div>
@@ -68,12 +68,12 @@ const ModalContainer = styled.div`
 `
 
 const ButtonContainer = styled.button`
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     background: transparent;
     border: 0.15rem solid var(--lightBlue);
     border-color: ${props => props.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
     color: ${props => props.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 0.1rem 0.7rem 0.3rem 0.7rem;
     cursor: pointer;
     margin: 0.2rem 0.5rem 0.2rem 0;

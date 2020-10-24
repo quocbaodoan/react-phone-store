@@ -99,6 +99,198 @@ export const storeProducts = [
     inCart: false,
     count: 0,
     total: 0
+  },
+  {
+    id: 9,
+    title: "Samsung Galaxy Note 10+",
+    img: "img/product-9.png",
+    price: "15.990.000",
+    company: "Samsung",
+    info:
+      "Trông ngoại hình khá giống nhau, tuy nhiên Samsung Galaxy Note 10+ sở hữu khá nhiều điểm khác biệt so với Galaxy Note 10 và đây được xem là một trong những chiếc máy đáng mua nhất trong năm 2019, đặc biệt dành cho những người thích một chiếc máy màn hình lớn, camera chất lượng hàng đầu.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 10,
+    title: "Oppo A92",
+    img: "img/product-10.png",
+    price: "6.490.000",
+    company: "Oppo",
+    info:
+      "OPPO A92 là mẫu smartphone tầm trung vừa mới được OPPO ra mắt đầu tháng 5/2020. Chiếc điện thoại gây ấn tượng với thiết kế màn hình khoét lỗ tràn viền, cụm 4 camera ấn tượng và được bán với mức giá vô cùng phải chăng.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 11,
+    title: "Vsmart Joy 3",
+    img: "img/product-11.png",
+    price: "2.990.000",
+    company: "Vsmart",
+    info:
+      "Vsmart Joy 3 4GB/64GB là một phiên bản mới, được nâng cấp nhẹ về RAM và bộ nhớ trong so với 2 mẫu smartphone cùng tên trước đó, mang đến thêm một sự lựa chọn hấp dẫn ở phân khúc smartphone giá rẻ cho người dùng.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 12,
+    title: "Xiaomi Redmi 9",
+    img: "img/product-12.png",
+    price: "3.790.000",
+    company: "Xiaomi",
+    info:
+      "Nhanh như một cơn gió, sức hot của Redmi Note 9 Pro chưa có dấu hiệu hạ nhiệt thì Xiaomi Redmi 9 vừa bất ngờ ra mắt sớm. Thiết bị mang một thiết kế mới, thời trang và nhỏ gọn, phần cứng được nâng cấp cùng thời lượng pin ấn tượng, đặc biệt đi kèm một mức giá bán không thể nào hấp dẫn hơn.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 13,
+    title: "Samsung Galaxy Z Fold2",
+    img: "img/product-13.png",
+    price: "50.000.000",
+    company: "Samsung",
+    info:
+      "Samsung Galaxy Z Fold 2 là tên gọi chính thức của điện thoại màn hình gập cao cấp nhất của Samsung. Với nhiều nâng cấp tiên phong về thiết kế, hiệu năng và camera, hứa hẹn đây sẽ là một siêu phẩm thành công tiếp theo đến từ “ông trùm” sản xuất điện thoại lớn nhất thế giới.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 14,
+    title: "OnePlus Nord 5G",
+    img: "img/product-14.png",
+    price: "12.490.000",
+    company: "OnePlus",
+    info:
+      "OnePlus Nord 5G là mẫu smartphone tầm trung đầu tiên của OnePlus đánh dấu sự hiện diện của hãng trong phân khúc này, khi mà trước giờ OnePlus chỉ ra mắt sản phẩm flagship cao cấp. OnePlus Nord 5G có một cấu hình gaming mạnh mẽ trong phân khúc, cụm 4 camera thời thượng cùng nhiều tính năng thu hút sự quan tâm đặc biệt của tín đồ Android.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 15,
+    title: "Oppo Reno3 Pro",
+    img: "img/product-15.png",
+    price: "14.290.000",
+    company: "Oppo",
+    info:
+      "OPPO Reno3 Pro tiếp nối truyền thống dòng Reno, vẫn sở hữu cụm camera sau chất lượng cao và bổ sung tính năng quay video Siêu chống rung 2.0 ấn tượng. OPPO cũng trang bị cho máy cụm camera selfie kép tích hợp AI, thiết kế cao cấp cùng màn hình siêu mượt 90Hz theo kịp xu hướng.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 16,
+    title: "iPhone SE 64GB",
+    img: "img/product-16.png",
+    price: "12.990.000",
+    company: "iPhone",
+    info:
+      "iPhone SE 2020 đã bất ngờ ra mắt với thiết kế 4.7 inch nhỏ gọn, chip A13 Bionic mạnh mẽ như trên iPhone 11 và đặc biệt sở hữu mức giá tốt chưa từng có.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 17,
+    title: "Samsung Galaxy A71",
+    img: "img/product-17.png",
+    price: "9.490.000",
+    company: "Samsung",
+    info:
+      "Sau A51, Samsung tiếp tục ra mắt Galaxy A71 là đại diện kế tiếp thuộc thế hệ smartphone Galaxy A 2020. Máy được cải tiến với camera macro siêu cận đột phá, camera chính lên đến 64 MP cùng thiết kế thời thượng và cao cấp.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 18,
+    title: "Vivo X50",
+    img: "img/product-18.png",
+    price: "11.990.000",
+    company: "Vivo",
+    info:
+      "Được ra mắt trong bộ các sản phẩm Vivo X50 series, Vivo X50 trở thành một ứng viên sáng giá trong phân khúc tầm trung với cấu hình khủng, chất lượng camera vượt trội và công nghệ âm thanh hiện đại nhất trên các dòng smartphone hiện nay.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 19,
+    title: "Oppo Reno4 Pro",
+    img: "img/product-19.png",
+    price: "11.990.000",
+    company: "Oppo",
+    info:
+      "Mới đây, OPPO đã chính thức trình làng chiếc smartphone mới mang tên OPPO Reno4 Pro. Máy được trang bị cấu hình vô cùng cao cấp với vi xử lý chip Snapdragon 720G, bộ 4 camera đến 48 MP ấn tượng, cùng công nghệ sạc siêu nhanh Super VOOC 65 W hướng tới nhóm khách hàng thích chụp ảnh, chơi game với hiệu năng cao nhưng được bán với mức giá vô cùng tốt.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 20,
+    title: "Samsung Galaxy Note 10 Lite",
+    img: "img/product-20.png",
+    price: "11.490.000",
+    company: "Samsung",
+    info:
+      "Sau bao đồn đoán và trông ngóng thì cuối cùng 'người em út' trong series Note 10 cũng đã chính thức trình làng với tên gọi Samsung Galaxy Note 10 Lite với những thay đổi nhất định về ngoại hình.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 21,
+    title: "Realme 7 Pro",
+    img: "img/product-21.png",
+    price: "8.990.000",
+    company: "Realme",
+    info:
+      "Trong cuộc đua của những chiếc điện thoại thông minh, smartphone tầm trung đang có sự cạnh tranh khốc liệt, mới đây mẫu smartphone cao cấp của nhà Realme là Realme 7 Pro chính thức ra mắt. Nổi bật với 4 camera sau AI chuyên nghiệp, cấu hình mạnh mẽ và công nghệ sạc cực nhanh SuperDart 65W đi kèm nhiều tính năng nổi trội khác.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 22,
+    title: "Huawei Nova 5T",
+    img: "img/product-22.png",
+    price: "8.290.000",
+    company: "Huawei",
+    info:
+      "Huawei Nova 5T là mẫu smartphone có cấu hình mạnh mẽ, thiết kế thời trang, đánh mạnh vào khâu chụp ảnh selfie với camera 32 MP, nhưng lại có giá bán rất cạnh tranh.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 23,
+    title: "Xiaomi Redmi Note 9 Pro",
+    img: "img/product-23.png",
+    price: "6.190.000",
+    company: "Xiaomi",
+    info:
+      "Kế thừa truyền thống tích hợp nhiều tính năng cực hấp dẫn trong mức giá cực tốt, Redmi Note 9 Pro đã ra mắt với nhiều trang bị ấn tượng: Vi xử lý Snapdragon 720G, màn hình nốt ruồi siêu tràn viền, cụm 4 camera 64 “chấm” và một viên pin khủng 5020 mAh.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 24,
+    title: "Vsmart Live 4 6GB",
+    img: "img/product-24.png",
+    price: "4.790.000",
+    company: "Vsmart",
+    info:
+      "Vsmart Live 4 6GB là mẫu smartphone tầm trung gây ấn tượng với cụm 4 camera sau đa chức năng, dung lượng pin khủng và hiệu năng mạnh mẽ cùng nhiều tính năng hấp dẫn khác sẽ mang đến trải nghiệm tốt nhất đến người dùng.",
+    inCart: false,
+    count: 0,
+    total: 0
   }
 ];
 

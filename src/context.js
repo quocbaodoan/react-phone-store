@@ -15,6 +15,8 @@ class ProductProvider extends Component {
         cartSubTotal: 0,
         cartTax: 0,
         cartTotal: 0,
+        display: false,
+        searchValue: "",
     };
 
     componentDidMount() {
@@ -169,6 +171,30 @@ class ProductProvider extends Component {
         })
     }
 
+    handleChange = (value) => {
+        this.setState(() => {
+            return{
+                searchValue: value
+            }
+        })
+    }
+
+    setDisplay = () => {
+        this.setState(() => {
+            return{
+                display: true
+            }
+        })
+    }
+
+    removeDisplay = () => {
+        this.setState(() => {
+            return{
+                display: false
+            }
+        })
+    }
+
     render() {
         return (
             <ProductContext.Provider value={{
@@ -180,7 +206,10 @@ class ProductProvider extends Component {
                 increment: this.increment,
                 decrement: this.decrement,
                 removeItem: this.removeItem,
-                clearCart: this.clearCart
+                clearCart: this.clearCart,
+                handleChange: this.handleChange,
+                setDisplay: this.setDisplay,
+                removeDisplay: this.removeDisplay
             }}>
                 {this.props.children}
             </ProductContext.Provider>

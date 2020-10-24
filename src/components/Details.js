@@ -12,7 +12,7 @@ export default class Details extends Component {
                     {(value) => {
                         const {id, company, price, title, info, img, inCart} = value.detailProduct
                         return(
-                            <ProductWrapper className="container py-5">
+                            <ProductWrapper className="container">
                                 {/*title*/}
                                 <div className="row">
                                     <div className="col-10 mx-auto text-center text-slanted my-5">
@@ -42,14 +42,14 @@ export default class Details extends Component {
                                         {/*button*/}
                                         <Link to="/">
                                             <ButtonContainer>
-                                                Back to Products
+                                                Quay lại
                                             </ButtonContainer>
                                         </Link>
                                         <ButtonContainer cart 
                                             disabled={inCart ? true : false} 
                                             onClick={() => {value.addToCart(id); value.openModal(id);}}
                                         >
-                                            {inCart ? "In Cart" : "Add to Cart"}
+                                            {inCart ? "Đã có" : "Thêm vào giỏ"}
                                         </ButtonContainer>
                                     </div>
                                 </div>
@@ -70,12 +70,12 @@ const ProductWrapper = styled.div`
 `
 
 const ButtonContainer = styled.button`
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     background: transparent;
     border: 0.15rem solid var(--lightBlue);
     border-color: ${props => props.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
     color: ${props => props.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 0.1rem 0.7rem 0.3rem 0.7rem;
     cursor: pointer;
     margin: 0.2rem 0.5rem 0.2rem 0;
