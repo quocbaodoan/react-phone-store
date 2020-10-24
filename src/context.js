@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {storeProducts, detailProduct} from "./data";
+import {storeProducts, detailProduct, productBrands} from "./data";
 
 const ProductContext = React.createContext();
 //Provider
@@ -8,6 +8,7 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
     state = {
         products: [],
+        productBrands: productBrands,
         detailProduct: detailProduct,
         cart: [],
         modalOpen: false,
@@ -175,8 +176,8 @@ class ProductProvider extends Component {
         this.setState(() => {
             return{
                 searchValue: value
-            }
-        })
+            }}
+        )
     }
 
     setDisplay = () => {

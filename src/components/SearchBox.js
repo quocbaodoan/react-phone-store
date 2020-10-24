@@ -30,8 +30,8 @@ export default class SearchBox extends Component{
                                                 {value.display && 
                                                 value.products.filter( item => item.title.toLowerCase().indexOf(this.state.searchText.toLowerCase()) > -1).slice(0, 5).map((item, i) => {
                                                     return(
-                                                        <Link to="/details" key={i}>
-                                                            <div onClick={() => value.handleDetail(item.id), () => value.removeDisplay()} className="dropdown-item" key={i} tabIndex="0" >
+                                                        <div onClick={() => {value.handleDetail(item.id); value.removeDisplay()}} className="dropdown-item" key={i} tabIndex="0" >
+                                                            <Link to="/details" key={i}>
                                                                 <div className="row">
                                                                     <div>
                                                                         <img src={item.img} style={{width:"40px"}}/>
@@ -41,8 +41,8 @@ export default class SearchBox extends Component{
                                                                         <div className="ml-2" style={{fontSize:"14px"}}>{item.price}đ</div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </Link>
+                                                            </Link>
+                                                        </div>
                                                     )
                                                 })}
                                             </div>

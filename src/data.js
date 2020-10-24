@@ -306,3 +306,57 @@ export const detailProduct = {
   count: 0,
   total: 0
 };
+
+
+export const productBrands = [
+  {
+    id: 1,
+    brand: "iPhone",
+    img: "img/brand-1.png"
+  },
+  {
+    id: 2,
+    brand: "Samsung",
+    img: "img/brand-2.png"
+  },
+  {
+    id: 3,
+    brand: "Vsmart",
+    img: "img/brand-3.png"
+  },
+  {
+    id: 4,
+    brand: "Xiaomi",
+    img: "img/brand-4.png"
+  },
+  {
+    id: 5,
+    brand: "Oppo",
+    img: "img/brand-5.png"
+  },
+  {
+    id: 6,
+    brand: "Vivo",
+    img: "img/brand-6.png"
+  },
+  {
+    id: 7,
+    brand: "Realme",
+    img: "img/brand-7.png"
+  },
+  {
+    id: 8,
+    brand: "OnePlus",
+    img: "img/brand-8.png"
+  },
+  {
+    id: 9,
+    brand: "Nokia",
+    img: "img/brand-9.png"
+  },
+  {
+    id: 10,
+    brand: "Huawei",
+    img: "img/brand-10.png"
+  }
+]
