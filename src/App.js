@@ -10,7 +10,6 @@ import Default from "./components/Default";
 import Modal from "./components/Modal";
 import { ProtectedRoute } from "./ProtectedRoute";
 import {ProductConsumer} from "./context";
-import ProductBrand from "./components/ProductBrand";
 
 class App extends Component{
     render(){
@@ -24,13 +23,16 @@ class App extends Component{
                         <Route path="/#" component={Default}></Route>
                         <ProductConsumer>
                             {value => {
-                                return value.productBrands.map(productBrand => {
+                                return [value.productBrands.map(productBrand => {
                                     return(
                                         <Route path={"/" + productBrand.brand.toLowerCase()}>
                                             <ProductList brand={productBrand.brand.toLowerCase()} ></ProductList>
                                         </Route>
                                     )
-                                })
+                                }),
+                                <Route path={"/" + value.searchValue.toLowerCase()}>
+                                    <ProductList brand={value.searchValue.toLowerCase()} ></ProductList>
+                                </Route>]
                             }}
                         </ProductConsumer>
                     </Switch>

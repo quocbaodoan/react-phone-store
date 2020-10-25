@@ -6,7 +6,7 @@ import Pagination from "./Pagination";
 import BrandLogo from "./BrandLogo";
 
 export default function ProductList(props) {
-    const brand = props.brand;
+    let brand = props.brand;
     console.log(brand);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(8);
@@ -44,7 +44,11 @@ export default function ProductList(props) {
                                         <Product key={product.id} product={product}/>
                                     )
                                 }),
-                                <Pagination 
+                                ((brand !== undefined) ? 
+                                    value.products.filter(product => product.title.toLowerCase().indexOf(brand) > -1).length
+                                    : 
+                                    value.products.length) > 8 ?
+                                <Pagination
                                     postsPerPage={8} 
                                     totalPosts={(brand !== undefined) ? 
                                         value.products.filter(product => product.title.toLowerCase().indexOf(brand) > -1).length
@@ -53,6 +57,7 @@ export default function ProductList(props) {
                                     } 
                                     paginate={paginate}
                                 />
+                                : null
                             ]
                         }}
                     </ProductConsumer>

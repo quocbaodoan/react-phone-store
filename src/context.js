@@ -172,7 +172,7 @@ class ProductProvider extends Component {
         })
     }
 
-    handleChange = (value) => {
+    setSearchValue = (value) => {
         this.setState(() => {
             return{
                 searchValue: value
@@ -208,7 +208,7 @@ class ProductProvider extends Component {
                 decrement: this.decrement,
                 removeItem: this.removeItem,
                 clearCart: this.clearCart,
-                handleChange: this.handleChange,
+                setSearchValue: this.setSearchValue,
                 setDisplay: this.setDisplay,
                 removeDisplay: this.removeDisplay
             }}>

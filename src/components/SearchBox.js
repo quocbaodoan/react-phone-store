@@ -7,10 +7,10 @@ export default class SearchBox extends Component{
     constructor(){
         super();
         this.state = {
-            searchText: ""
+            searchValue: ""
         }
         this.handleChange = this.handleChange.bind(this);
-    }
+    };
     handleChange(event) {
         const {name, value} = event.target;
         this.setState({ [name]: value });
@@ -25,10 +25,10 @@ export default class SearchBox extends Component{
                                 <React.Fragment>
                                     <div className="form-inline ml-2">
                                         <div className="dropdown">
-                                            <input type="text" className="form-control" name="searchText" placeholder="Nhập từ khóa cần tìm" value={this.state.searchText} onChange={this.handleChange} onClick={() => value.setDisplay()}/>
+                                            <input type="text" className="form-control" name="searchValue" placeholder="Nhập từ khóa cần tìm" value={this.state.searchValue} onChange={this.handleChange} onClick={() => value.setDisplay()}/>
                                             <div className="autoContainer dropdown-search">
                                                 {value.display && 
-                                                value.products.filter( item => item.title.toLowerCase().indexOf(this.state.searchText.toLowerCase()) > -1).slice(0, 5).map((item, i) => {
+                                                value.products.filter( item => item.title.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) > -1).slice(0, 5).map((item, i) => {
                                                     return(
                                                         <div onClick={() => {value.handleDetail(item.id); value.removeDisplay()}} className="dropdown-item" key={i} tabIndex="0" >
                                                             <Link to="/details" key={i}>
@@ -47,7 +47,9 @@ export default class SearchBox extends Component{
                                                 })}
                                             </div>
                                         </div>
-                                        <i className="fas fa-search ml-2"></i>
+                                        <Link to={"/"+this.state.searchValue.toLowerCase()}>
+                                            <i className="fas fa-search ml-2" onClick={() => value.setSearchValue(this.state.searchValue)}></i>
+                                        </Link>
                                     </div>
                                 </React.Fragment>
                             )

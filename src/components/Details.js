@@ -15,25 +15,24 @@ export default class Details extends Component {
                             <ProductWrapper className="container">
                                 {/*title*/}
                                 <div className="row">
-                                    <div className="col-10 mx-auto text-center text-slanted my-5">
+                                    <div className="col-10 mx-auto text-center text-slanted mt-5 mb-3">
                                         <h1>{title}</h1>
                                     </div>
                                 </div>
                                 {/*end title*/}
                                 {/*product info*/}
                                 <div className="row">
-                                    <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
-                                        <img src={img} className="img-fluid px-4 py-4" alt="product"/>
+                                    <div className="col-10 mx-auto col-md-5 my-3 text-capitalize">
+                                        <img src={img} className="img-fluid pl-5 pr-3 py-4" alt="product"/>
                                     </div>
                                     {/*product text*/}
-                                    <div className="col-10 mx-auto col-md-6 my-3">
-                                        <h2>Model: {title}</h2>
-                                        <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
+                                    <div className="col-10 mx-auto col-md-7 my-3 pr-5">
+                                        <h4 className="text-title text-uppercase mt-3 mb-2">
                                             Made by: <span className="text-uppercase">{company}</span>
                                         </h4>
                                         <h4>
                                             <strong>
-                                                Price: {price}<span>đ</span>
+                                                Giá: {price}<span>đ</span>
                                             </strong>
                                         </h4>
                                         <p className="text-muted">
@@ -63,6 +62,8 @@ export default class Details extends Component {
 }
 
 const ProductWrapper = styled.div`
+    height: 91vh;
+    background: white;
     .img-fluid{
         background: white;
         border-radius: 20px;

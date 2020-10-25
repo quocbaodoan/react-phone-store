@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components';
 
 export default function Pagination({ postsPerPage, totalPosts, paginate }) {
     const pageNumbers = [];
@@ -6,7 +7,7 @@ export default function Pagination({ postsPerPage, totalPosts, paginate }) {
         pageNumbers.push(i);
     }
     return (
-        <div>
+        <PaginationWrapper className="col-12">
             <ul className="pagination justify-content-center">
                 {pageNumbers.map(number => (
                 <li key={number} className="page-item">
@@ -16,6 +17,10 @@ export default function Pagination({ postsPerPage, totalPosts, paginate }) {
                 </li>
                 ))}
             </ul>
-        </div>
+        </PaginationWrapper>
     )
 }
+
+const PaginationWrapper = styled.div`
+
+`
