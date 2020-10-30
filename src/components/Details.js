@@ -155,6 +155,7 @@ const ButtonContainer = styled.button`
 
     &:hover{
         background: ${props => props.cart ? "var(--mainYellow)" : "#056676"};
+        color: ${props => props.cart ? "#fcfcfc" : "#fcfcfc"} !important;
         color: var(--mainDark);
     }
 

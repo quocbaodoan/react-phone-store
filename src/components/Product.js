@@ -69,7 +69,7 @@ const ProductWrapper = styled.div`
         }
         .card-footer{
             background: #5eaaa8;
-            color: #f4f4f2;
+            color: #fcfcfc;
         }
     }
     
@@ -93,7 +93,7 @@ const ProductWrapper = styled.div`
         padding: 0.2rem 0.4rem;
         background: #5eaaa8;
         border:none;
-        color: #f4f4f2;
+        color: #fcfcfc;
         border-radius: 10px 0 0 10px;
         transform: translate(110%, 0);
         font-size: 17px;

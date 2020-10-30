@@ -19,11 +19,11 @@ export default class Modal extends Component {
                             <ModalContainer>
                                 <div className="container">
                                     <div className="row">
-                                        <div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 text-center p-5">
-                                            <h3>Item added to the cart</h3>
-                                            <img src={img} className="img-fluid p-2 mt-2" alt="product"/>
-                                            <h5 className="mt-3">{title}</h5>
-                                            <h5 className="text-muted">Price: {price}đ</h5>
+                                        <div id="modal" className="col-8 mx-auto col-md-6 col-lg-5 text-center p-5">
+                                            <h3 style={{color: "#056676", fontWeight: "1000"}}>Sản phẩm đã được thêm vào giỏ</h3>
+                                            <img src={img} className="img-fluid px-4 py-2 mt-2" alt="product"/>
+                                            <h5 style={{color: "#056676"}} className="mt-3">{title}</h5>
+                                            <h5 className="text-muted">Giá: {price}đ</h5>
                                             <Link to="/">
                                                 <ButtonContainer onClick = {() => closeModal()}>
                                                     Tiếp tục mua sắm
@@ -58,7 +58,8 @@ const ModalContainer = styled.div`
     justify-content: center;
 
     #modal{
-        background: var(--mainWhite);
+        background: white;
+        border-radius: 20px;
     }
 
     .img-fluid{
@@ -81,6 +82,7 @@ const ButtonContainer = styled.button`
 
     &:hover{
         background: ${props => props.cart ? "var(--mainYellow)" : "#056676"};
+        color: ${props => props.cart ? "#fcfcfc" : "#fcfcfc"} !important;
         color: var(--mainDark);
     }
 

@@ -7,7 +7,6 @@ import BrandLogo from "./BrandLogo";
 
 export default function ProductList(props) {
     let brand = props.brand;
-    console.log(brand);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(8);
     const indexOfLastPost = currentPage * postsPerPage;
@@ -15,7 +14,7 @@ export default function ProductList(props) {
     const paginate = pageNumber => setCurrentPage(pageNumber);
     return (
         <React.Fragment>
-        <div className="py-4">
+        <div className="pt-3">
             <div className="container">
                 <div className="row">
                     <ProductConsumer>

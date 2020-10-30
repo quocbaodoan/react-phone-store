@@ -1,47 +1,29 @@
 import React, { Component, useRef  } from 'react'
 import styled from "styled-components"
-import {ProductConsumer, ProductContext} from "../context";
+import {ProductConsumer} from "../context";
 import {Link} from "react-router-dom";
 
 export default class SearchBox extends Component{
-    static contextType = ProductContext;
-    
     constructor(){
         super();
         this.state = {
             searchValue: "",
         }
         this.handleChange = this.handleChange.bind(this);
-        this.wrapperRef = React.createRef();
     };
-
-    componentDidMount() {
-        document.addEventListener('mousedown', this.handleClickOutside);
-        console.log(this.contextType);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handleClickOutside);
-    }
-
-    handleClickOutside(event) {
-        if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
-            this.context.removeDisplay();
-        }
-    }
 
     handleChange(event) {
         const {name, value} = event.target;
         this.setState({ [name]: value });
-    }
+    };
     render(){
         return (
-            <SearchWrapper ref={this.wrapperRef}>
+            <SearchWrapper>
                 <ProductConsumer>
                     {value => {
                         return (
                             <React.Fragment>
-                                <div className="form-inline ml-2">
+                                <div className="form-inline ml-1">
                                     <div className="dropdown">
                                         <input type="text" className="form-control" name="searchValue" placeholder="Nhập từ khóa cần tìm" value={this.state.searchValue} onChange={this.handleChange} onClick={() => value.setDisplay()}/>
                                         <div className="autoContainer dropdown-search">
@@ -66,7 +48,7 @@ export default class SearchBox extends Component{
                                         </div>
                                     </div>
                                     <Link to={"/"+this.state.searchValue.toLowerCase()}>
-                                        <i className="fas fa-search ml-2" onClick={() => value.setSearchValue(this.state.searchValue)}></i>
+                                        <i className="fas fa-search ml-2" onClick={() => {value.setSearchValue(this.state.searchValue); value.removeDisplay()}}></i>
                                     </Link>
                                 </div>
                             </React.Fragment>
@@ -107,12 +89,15 @@ const SearchWrapper = styled.div`
     }
 
     a:active{
-        background-color: #056676 !important;
-        color: white;
+        color: #fcfcfc !important;
     }
 
     .fa-search:hover{
         color: #056676; 
+    }
+
+    .dropdown-item:active{
+        background-color: #5eaaa8;
     }
 
     @media screen and (max-width: 768px) {
