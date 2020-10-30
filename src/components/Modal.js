@@ -71,8 +71,8 @@ const ButtonContainer = styled.button`
     font-size: 1.2rem;
     background: transparent;
     border: 0.15rem solid var(--lightBlue);
-    border-color: ${props => props.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
-    color: ${props => props.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
+    border-color: ${props => props.cart ? "var(--mainYellow)" : "#056676"};
+    color: ${props => props.cart ? "var(--mainYellow)" : "#056676"};
     border-radius: 20px;
     padding: 0.1rem 0.7rem 0.3rem 0.7rem;
     cursor: pointer;
@@ -80,7 +80,7 @@ const ButtonContainer = styled.button`
     transition: all 0.5s ease-in-out;
 
     &:hover{
-        background: ${props => props.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
+        background: ${props => props.cart ? "var(--mainYellow)" : "#056676"};
         color: var(--mainDark);
     }
 

@@ -18,7 +18,7 @@ export default class Cart extends Component {
                             return(
                                 <React.Fragment>
                                     <div>       
-                                        <Title name="YOUR" title="CART"/>
+                                        <h1 className="text-center my-3" style={{color: "#056676", fontWeight: "1000", letterSpacing: "7px"}}>GIỎ HÀNG</h1>
                                         <CartColumns/>
                                         <CartList value={value}/>
                                         <CartTotals value={value} history = {this.props.history}/>

@@ -7,22 +7,22 @@ export default function CartColumns() {
             <div className="container text-center d-none d-lg-block">
                 <div className="row">
                     <div className="col-10 mx-auto col-lg-2">
-                        <p className="text-uppercase py-auto">products</p>
+                        <p className="text-uppercase py-auto">Sản phẩm</p>
                     </div>
                     <div className="col-10 mx-auto col-lg-2">
-                        <p className="text-uppercase">name of product</p>
+                        <p className="text-uppercase">Tên sản phẩm</p>
                     </div>
                     <div className="col-10 mx-auto col-lg-2">
-                        <p className="text-uppercase">price</p>
+                        <p className="text-uppercase">Giá</p>
                     </div>
                     <div className="col-10 mx-auto col-lg-2">
-                        <p className="text-uppercase">quantity</p>
+                        <p className="text-uppercase">Số lượng</p>
                     </div>
                     <div className="col-10 mx-auto col-lg-2">
-                        <p className="text-uppercase">remove</p>
+                        <p className="text-uppercase">Loại bỏ</p>
                     </div>
                     <div className="col-10 mx-auto col-lg-2">
-                        <p className="text-uppercase">total</p>
+                        <p className="text-uppercase">Tổng</p>
                     </div>
                 </div>
             </div>
@@ -35,6 +35,7 @@ const CartColumnsWrapper = styled.div`
         background: white;
         height: 40px;
         border-radius: 20px;
+        color: #666666;
     }
     p{
         margin-top: 8px !important;

@@ -37,8 +37,8 @@ const ButtonContainer = styled.button`
     text-transform: capitalize;
     font-size: 1.2rem;
     background: transparent;
-    border: 0.15rem solid var(--lightBlue);
-    color: var(--lightBlue);
+    border: 0.15rem solid #056676;
+    color: #056676;
     border-radius: 20px;
     padding: 1px 0.7rem 3px 0.7rem;
     cursor: pointer;
@@ -46,8 +46,8 @@ const ButtonContainer = styled.button`
     transition: all 0.5s ease-in-out;
 
     &:hover{
-        background: var(--lightBlue);
-        color: var(--mainDark);
+        background: #056676;
+        color: #e8ded2;
     }
 
     &:focus{
@@ -56,7 +56,7 @@ const ButtonContainer = styled.button`
 `
 
 const NavWrapper = styled.nav`
-    background: var(--mainDark);
+    background: #a3d2ca;
     .nav-link{
         color: var(--mainWhite) !important;
         font-size: 1.6rem;
@@ -65,6 +65,11 @@ const NavWrapper = styled.nav`
 
     .navbar-brand{
         color: white !important;
-        width: 50px;
+        width: 70px;
+        padding: 0px;
+    }
+
+    .navbar{
+        padding: 0px
     }
 `

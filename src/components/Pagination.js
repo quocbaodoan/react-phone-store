@@ -22,5 +22,7 @@ export default function Pagination({ postsPerPage, totalPosts, paginate }) {
 }
 
 const PaginationWrapper = styled.div`
-
+    .page-link{
+        color: #056676 !important;
+    }
 `

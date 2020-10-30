@@ -8,7 +8,7 @@ import Details from "./components/Details";
 import Cart from "./components/Cart";
 import Default from "./components/Default";
 import Modal from "./components/Modal";
-import { ProtectedRoute } from "./ProtectedRoute";
+import {ProtectedRoute} from "./ProtectedRoute";
 import {ProductConsumer} from "./context";
 
 class App extends Component{
@@ -23,16 +23,10 @@ class App extends Component{
                         <Route path="/#" component={Default}></Route>
                         <ProductConsumer>
                             {value => {
-                                return [value.productBrands.map(productBrand => {
-                                    return(
-                                        <Route path={"/" + productBrand.brand.toLowerCase()}>
-                                            <ProductList brand={productBrand.brand.toLowerCase()} ></ProductList>
-                                        </Route>
-                                    )
-                                }),
+                                return (
                                 <Route path={"/" + value.searchValue.toLowerCase()}>
                                     <ProductList brand={value.searchValue.toLowerCase()} ></ProductList>
-                                </Route>]
+                                </Route>)
                             }}
                         </ProductConsumer>
                     </Switch>

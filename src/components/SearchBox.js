@@ -1,59 +1,77 @@
-import React, { Component } from 'react'
+import React, { Component, useRef  } from 'react'
 import styled from "styled-components"
-import {ProductConsumer} from "../context";
+import {ProductConsumer, ProductContext} from "../context";
 import {Link} from "react-router-dom";
 
 export default class SearchBox extends Component{
+    static contextType = ProductContext;
+    
     constructor(){
         super();
         this.state = {
-            searchValue: ""
+            searchValue: "",
         }
         this.handleChange = this.handleChange.bind(this);
+        this.wrapperRef = React.createRef();
     };
+
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+        console.log(this.contextType);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
+            this.context.removeDisplay();
+        }
+    }
+
     handleChange(event) {
         const {name, value} = event.target;
         this.setState({ [name]: value });
     }
     render(){
         return (
-            <SearchWrapper>
-                    <ProductConsumer>
-                        {value => {
-                            let searchValue = "";
-                            return (
-                                <React.Fragment>
-                                    <div className="form-inline ml-2">
-                                        <div className="dropdown">
-                                            <input type="text" className="form-control" name="searchValue" placeholder="Nhập từ khóa cần tìm" value={this.state.searchValue} onChange={this.handleChange} onClick={() => value.setDisplay()}/>
-                                            <div className="autoContainer dropdown-search">
-                                                {value.display && 
-                                                value.products.filter( item => item.title.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) > -1).slice(0, 5).map((item, i) => {
-                                                    return(
-                                                        <div onClick={() => {value.handleDetail(item.id); value.removeDisplay()}} className="dropdown-item" key={i} tabIndex="0" >
-                                                            <Link to="/details" key={i}>
-                                                                <div className="row">
-                                                                    <div>
-                                                                        <img src={item.img} style={{width:"40px"}}/>
-                                                                    </div>
-                                                                    <div>
-                                                                        <span className="ml-2">{item.title}</span>
-                                                                        <div className="ml-2" style={{fontSize:"14px"}}>{item.price}đ</div>
-                                                                    </div>
+            <SearchWrapper ref={this.wrapperRef}>
+                <ProductConsumer>
+                    {value => {
+                        return (
+                            <React.Fragment>
+                                <div className="form-inline ml-2">
+                                    <div className="dropdown">
+                                        <input type="text" className="form-control" name="searchValue" placeholder="Nhập từ khóa cần tìm" value={this.state.searchValue} onChange={this.handleChange} onClick={() => value.setDisplay()}/>
+                                        <div className="autoContainer dropdown-search">
+                                            {value.display && 
+                                            value.products.filter( item => item.title.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) > -1).slice(0, 5).map((item, i) => {
+                                                return(
+                                                    <div onClick={() => {value.handleDetail(item.id); value.removeDisplay()}} className="dropdown-item" key={i} tabIndex="0" >
+                                                        <Link to="/details" key={i}>
+                                                            <div className="row">
+                                                                <div>
+                                                                    <img src={item.img} style={{width:"40px"}}/>
                                                                 </div>
-                                                            </Link>
-                                                        </div>
-                                                    )
-                                                })}
-                                            </div>
+                                                                <div>
+                                                                    <span className="ml-2">{item.title}</span>
+                                                                    <div className="ml-2" style={{fontSize:"14px"}}>{item.price}đ</div>
+                                                                </div>
+                                                            </div>
+                                                        </Link>
+                                                    </div>
+                                                )
+                                            })}
                                         </div>
-                                        <Link to={"/"+this.state.searchValue.toLowerCase()}>
-                                            <i className="fas fa-search ml-2" onClick={() => value.setSearchValue(this.state.searchValue)}></i>
-                                        </Link>
                                     </div>
-                                </React.Fragment>
-                            )
-                        }}
+                                    <Link to={"/"+this.state.searchValue.toLowerCase()}>
+                                        <i className="fas fa-search ml-2" onClick={() => value.setSearchValue(this.state.searchValue)}></i>
+                                    </Link>
+                                </div>
+                            </React.Fragment>
+                        )
+                    }}
                 </ProductConsumer>
             </SearchWrapper>
         )
@@ -81,6 +99,20 @@ const SearchWrapper = styled.div`
 
     .dropdown-item{
         padding: 6px 30px !important;
+    }
+
+    a{
+        color: #056676 !important;
+        text-decoration: none;
+    }
+
+    a:active{
+        background-color: #056676 !important;
+        color: white;
+    }
+
+    .fa-search:hover{
+        color: #056676; 
     }
 
     @media screen and (max-width: 768px) {

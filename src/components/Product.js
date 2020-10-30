@@ -8,7 +8,7 @@ export default class Product extends Component {
     render() {
         const {id, title, img, price, inCart} = this.props.product;
         return (
-            <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
+            <ProductWrapper className="col-9 col-md-6 col-lg-3 my-3 align-self-start">
                 <div className="card">
                     <ProductConsumer>
                         {value => (
@@ -18,7 +18,7 @@ export default class Product extends Component {
                                         <img src={img} alt="product" className="card-img-top"/>
                                     </Link>
                                     <button className="cart-btn" disabled={inCart ? true : false} onClick={() => {value.addToCart(id); value.openModal(id);}}>
-                                        {inCart ? (<p className="text-capitalize mb-0" disabled>in cart</p>) : (<i className="fas fa-cart-plus"/>)}
+                                        {inCart ? (<p className="text-capitalize mb-0" disabled>Đã có</p>) : (<i className="fas fa-cart-plus"/>)}
                                     </button>
                                 </div>
                                 <div className="card-footer">
@@ -59,6 +59,7 @@ const ProductWrapper = styled.div`
         border-bottom-right-radius: 20px;
         border-top: transparent;
         transition: all 0.4s linear;
+        color: #056676;
     }
 
     &:hover{
@@ -67,8 +68,8 @@ const ProductWrapper = styled.div`
             box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2)
         }
         .card-footer{
-            background: var(--lightDark);
-            color: var(--mainWhite);
+            background: #5eaaa8;
+            color: #f4f4f2;
         }
     }
     
@@ -90,9 +91,9 @@ const ProductWrapper = styled.div`
         bottom: 0;
         right: 0;
         padding: 0.2rem 0.4rem;
-        background: var(--lightBlue);
+        background: #5eaaa8;
         border:none;
-        color: var(--mainWhite);
+        color: #f4f4f2;
         border-radius: 10px 0 0 10px;
         transform: translate(110%, 0);
         font-size: 17px;
