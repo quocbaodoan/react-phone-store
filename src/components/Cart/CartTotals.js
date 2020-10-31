@@ -9,16 +9,7 @@ export default function CartTotals({value, history}) {
         <CartTotalsWrapper>
         <React.Fragment>
             <div className="row">
-                <div className="col-12 mt-2 ml-auto text-right">
-                    <Link to="/">
-                        <button className="btn btn-outline-danger text-uppercase mb-3 px-4" style={{borderRadius: "20px"}} type="button" onClick={() => clearCart()}>
-                            Xóa giỏ hàng
-                        </button>
-                    </Link>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-6 col-lg-3 col-md-5 col-sm-5 ml-auto text-right">
+                <div className="col-12 pr-5 text-right">
                     <ul className="parameter">
                         <li>
                             <span className="main">Tổng:</span>
@@ -36,7 +27,7 @@ export default function CartTotals({value, history}) {
                 </div>
             </div>
             <div className="row">
-                <div className="col-12 ml-auto text-right">
+                <div className="col-12 ml-auto pr-5 text-right">
                     <PaypalButton total={cartTotal} clearCart={clearCart} history={history}/>
                 </div>
             </div>
@@ -73,7 +64,7 @@ const CartTotalsWrapper = styled.div`
 
     .main{
         display: table-cell;
-        width: 65%;
+        width: 60%;
         vertical-align: top;
         color: #666666;
     }

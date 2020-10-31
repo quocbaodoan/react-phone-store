@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
-import logo from "../logo.png"
-import styled from "styled-components"
-import SearchBox from "./SearchBox"
-import OutsideAlerter from './RemoveDisplaySearchBox';
+import logo from "../logo.png";
+import styled from "styled-components";
+import SearchBox from "./SearchBox";
+import RemoveDisplaySearchBox from './RemoveDisplaySearchBox';
 
 
 export default class Navbar extends Component {
@@ -17,9 +17,9 @@ export default class Navbar extends Component {
                     <Link to="/">
                         <img src={logo} alt="store" className="navbar-brand"/>
                     </Link>
-                    <OutsideAlerter>
+                    <RemoveDisplaySearchBox>
                         <SearchBox/>
-                    </OutsideAlerter>
+                    </RemoveDisplaySearchBox>
                     <Link to="/cart" className="ml-auto">
                         <ButtonContainer>
                             <span>

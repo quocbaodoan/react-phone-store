@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {ProductConsumer, ProductContext} from "../context"
+import {ProductContext} from "../context"
 
 export default class OutsideAlerter extends Component {
     static contextType = ProductContext;
     constructor(props) {
         super(props);
-
         this.setWrapperRef = this.setWrapperRef.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
     }

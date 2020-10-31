@@ -1,6 +1,5 @@
 import React, { Component, useState } from 'react'
 import Product from "./Product";
-import Title from "./Title";
 import {ProductConsumer} from "../context";
 import Pagination from "./Pagination";
 import BrandLogo from "./BrandLogo";
@@ -14,14 +13,14 @@ export default function ProductList(props) {
     const paginate = pageNumber => setCurrentPage(pageNumber);
     return (
         <React.Fragment>
-        <div className="pt-3">
+        <div className="pt-3" style={{minHeight: "100vh"}}>
             <div className="container">
                 <div className="row">
                     <ProductConsumer>
                         {value => {
                             return [
                                 (
-                                    <div className="text-center d-block container">
+                                    <div className="text-center d-block container col-11 col-md-12">
                                         <div className="row" style={{margin: "0px"}}>
                                             {value.productBrands.map(productBrand => {
                                             return(

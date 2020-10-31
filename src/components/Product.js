@@ -8,7 +8,7 @@ export default class Product extends Component {
     render() {
         const {id, title, img, price, inCart} = this.props.product;
         return (
-            <ProductWrapper className="col-9 col-md-6 col-lg-3 my-3 align-self-start">
+            <ProductWrapper className="col-8 col-md-6 col-lg-3 my-3 align-self-start mx-auto mx-md-0">
                 <div className="card">
                     <ProductConsumer>
                         {value => (
@@ -18,7 +18,7 @@ export default class Product extends Component {
                                         <img src={img} alt="product" className="card-img-top"/>
                                     </Link>
                                     <button className="cart-btn" disabled={inCart ? true : false} onClick={() => {value.addToCart(id); value.openModal(id);}}>
-                                        {inCart ? (<p className="text-capitalize mb-0" disabled>Đã có</p>) : (<i className="fas fa-cart-plus"/>)}
+                                        {inCart ? (<p className="mb-0" disabled>Đã có</p>) : (<p className="mb-0" disabled>Thêm vào giỏ</p>)}
                                     </button>
                                 </div>
                                 <div className="card-footer">
@@ -50,7 +50,7 @@ const ProductWrapper = styled.div`
     .card{
         border-color: transparent;
         border-radius: 20px;
-        transition: all 0.4s linear;
+        transition: all 0.3s linear;
     }
 
     .card-footer{
@@ -58,7 +58,7 @@ const ProductWrapper = styled.div`
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
         border-top: transparent;
-        transition: all 0.4s linear;
+        transition: all 0.3s linear;
         color: #056676;
     }
 
@@ -79,7 +79,7 @@ const ProductWrapper = styled.div`
     }
 
     .card-img-top{
-        transition: transform 0.4s linear;
+        transition: transform 0.3s linear;
     }
 
     .img-container:hover .card-img-top{
@@ -87,17 +87,18 @@ const ProductWrapper = styled.div`
     }
 
     .cart-btn{
+        width: 100px;
         position: absolute;
-        bottom: 0;
-        right: 0;
-        padding: 0.2rem 0.4rem;
+        bottom: 2%;
+        left: 32%;
+        padding: 4px 0.4rem;
         background: #5eaaa8;
         border:none;
         color: #fcfcfc;
-        border-radius: 10px 0 0 10px;
-        transform: translate(110%, 0);
+        border-radius: 20px;
+        transform: translate(0, 125%);
         font-size: 17px;
-        transition: transform 0.4s linear;
+        transition: transform 0.3s linear;
     }
 
     .img-container:hover .cart-btn{

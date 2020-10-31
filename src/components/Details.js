@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {ProductConsumer} from "../context";
 import {Link} from "react-router-dom";
-import Title from "./Title";
 import styled from "styled-components";
 
 export default class Details extends Component {
@@ -43,7 +42,7 @@ export default class Details extends Component {
                                         {/*button*/}
                                         <Link to="/">
                                             <ButtonContainer>
-                                                Quay lại
+                                                Về trang chủ
                                             </ButtonContainer>
                                         </Link>
                                         <ButtonContainer cart 
@@ -105,7 +104,7 @@ export default class Details extends Component {
 }
 
 const ProductWrapper = styled.div`
-    height: 91vh;
+    min-height: 92vh;
     background: white;
     .img-fluid{
         background: white;
@@ -113,7 +112,7 @@ const ProductWrapper = styled.div`
     }
     
     .parameter{
-        font-weight: 100;
+        font-weight: 300;
         display: block;
         position: relative;
         overflow: hidden;

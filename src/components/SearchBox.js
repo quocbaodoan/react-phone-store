@@ -1,21 +1,35 @@
 import React, { Component, useRef  } from 'react'
 import styled from "styled-components"
-import {ProductConsumer} from "../context";
+import {ProductConsumer, ProductContext} from "../context";
 import {Link} from "react-router-dom";
 
 export default class SearchBox extends Component{
+    static contextType = ProductContext;
     constructor(){
         super();
         this.state = {
             searchValue: "",
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     };
 
     handleChange(event) {
         const {name, value} = event.target;
         this.setState({ [name]: value });
     };
+
+    handleKeyDown(event) {
+        console.log(event.key)
+        console.log(this.state.searchValue)
+        if (event.key === "Enter"){
+            return(
+                <Link to={"/"+this.state.searchValue.toLowerCase()}>
+                    {() => {this.context.setSearchValue(this.state.searchValue); this.context.removeDisplay()}}
+                </Link>
+            )
+        }
+    }
     render(){
         return (
             <SearchWrapper>
@@ -25,7 +39,7 @@ export default class SearchBox extends Component{
                             <React.Fragment>
                                 <div className="form-inline ml-1">
                                     <div className="dropdown">
-                                        <input type="text" className="form-control" name="searchValue" placeholder="Nhập từ khóa cần tìm" value={this.state.searchValue} onChange={this.handleChange} onClick={() => value.setDisplay()}/>
+                                        <input type="text" className="form-control" name="searchValue" placeholder="Nhập từ khóa cần tìm" value={this.state.searchValue} onChange={this.handleChange} onClick={() => value.setDisplay()} onKeyDown={this.handleKeyDown}/>
                                         <div className="autoContainer dropdown-search">
                                             {value.display && 
                                             value.products.filter( item => item.title.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) > -1).slice(0, 5).map((item, i) => {
@@ -64,6 +78,10 @@ const SearchWrapper = styled.div`
     .form-control{
         width: 300px;
         border-radius: 20px !important;
+    }
+
+    input[type="text"]{
+        color: #056676;
     }
 
     .fa-search{

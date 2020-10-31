@@ -10,27 +10,29 @@ import Default from "./components/Default";
 import Modal from "./components/Modal";
 import {ProtectedRoute} from "./ProtectedRoute";
 import {ProductConsumer} from "./context";
+import Footer from './components/Footer';
 
 class App extends Component{
     render(){
         return (
             <React.Fragment>
-                    <Navbar/>
-                    <Switch>
-                        <Route exact path="/" component={ProductList}></Route>
-                        <Route path="/details" component={Details}></Route>
-                        <Route path="/cart" component={Cart}></Route>
-                        <Route path="/#" component={Default}></Route>
-                        <ProductConsumer>
-                            {value => {
-                                return (
-                                <Route path={"/" + value.searchValue.toLowerCase()}>
-                                    <ProductList brand={value.searchValue.toLowerCase()} ></ProductList>
-                                </Route>)
-                            }}
-                        </ProductConsumer>
-                    </Switch>
-                    <Modal/>
+                <Navbar/>
+                <Switch>
+                    <Route exact path="/" component={ProductList}></Route>
+                    <Route path="/details" component={Details}></Route>
+                    <Route path="/cart" component={Cart}></Route>
+                    <Route path="/#" component={Default}></Route>
+                    <ProductConsumer>
+                        {value => {
+                            return (
+                            <Route path={"/" + value.searchValue.toLowerCase()}>
+                                <ProductList brand={value.searchValue.toLowerCase()} ></ProductList>
+                            </Route>)
+                        }}
+                    </ProductConsumer>
+                </Switch>
+                <Modal/>
+                <Footer/>
             </React.Fragment>
         );
     }

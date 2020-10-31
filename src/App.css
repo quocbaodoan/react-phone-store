@@ -10,6 +10,7 @@ body{
     font-family: 'Oswald', sans-serif !important;
     background: #f4f4f2 !important;
     color: var(--lightDark) !important;
+    height: 100% !important;
 }
 
 .text-title{
